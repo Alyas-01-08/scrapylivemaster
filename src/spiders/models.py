@@ -10,9 +10,9 @@ logger.setLevel(logging.ERROR)
 db = PostgresqlDatabase(
     'root',
     user='root',
-    password='PWghdRet',
-    host='194.67.108.169',
-    port='5432')
+    password='pass',
+    host='host',
+    port='port')
 
 
 class BaseModel(Model):
