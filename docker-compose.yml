@@ -1,0 +1,64 @@
+version: '3.7'
+
+services:
+  livemaster:
+    build:
+        context: .
+        dockerfile: scrapy.Dockerfile
+    command: bash -c "scrapy crawl livemaster -o livemaster.json"
+    logging:
+      driver: json-file
+      options:
+        max-size: "1000k"
+        max-file: "2"
+  oskelly:
+    build:
+        context: .
+        dockerfile: scrapy.Dockerfile
+    command: bash -c "scrapy crawl oskelly -o oskelly.json"
+    logging:
+      driver: json-file
+      options:
+        max-size: "1000k"
+        max-file: "2"
+#  amazon:
+#    restart: always
+#    build:
+#      context: .
+#      dockerfile: scrapy.Dockerfile
+#    command: bash -c "scrapy crawl amazon -o amazon.json"
+#    logging:
+#      driver: json-file
+#      options:
+#        max-size: "1000k"
+#        max-file: "2"
+#  eros:
+#    build:
+#      context: .
+#      dockerfile: scrapy.Dockerfile
+#    command: bash -c "scrapy crawl eros -o eros.json"
+#    logging:
+#      driver: json-file
+#      options:
+#        max-size: "1000k"
+#        max-file: "2"
+#  blooming:
+#    build:
+#      context: .
+#      dockerfile: scrapy.Dockerfile
+#    command: bash -c "scrapy crawl blooming -o blooming.json"
+#    logging:
+#      driver: json-file
+#      options:
+#        max-size: "1000k"
+#        max-file: "2"
+#  ounass:
+#    build:
+#      context: .
+#      dockerfile: scrapy.Dockerfile
+#    command: bash -c "scrapy crawl ounass -o ounass.json"
+#    logging:
+#      driver: json-file
+#      options:
+#        max-size: "1000k"
+#        max-file: "2"
